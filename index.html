@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		:root {
+  --circleDiameter: 80px;
+  --radius: calc(.5 * var(--circleDiameter));
+  --fontSize: calc(.15 * var(--circleDiameter));
+} 
+
+.circle {
+      width: var(--circleDiameter);
+      height:var(--circleDiameter);
+      border-radius: var(--radius);
+      background: firebrick;
+  
+      
+      position: fixed;
+  /*make center centered rather than centering top left*/
+      top: calc(50vh - .5 * var(--circleDiameter));
+      left: calc(50vw - .5 * var(--circleDiameter));
+  
+      line-height: var(--circleDiameter);
+      text-align: center;
+
+      
+    }
+
+.h1 {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: var(--fontSize);
+  
+      font-family:"futura";
+      color: white;
+      font-size: var(--fontSize);     
+}
+
+
+  
+      
+    }
+
+.h1 {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: var(--fontSize);
+  
+      font-family:"futura";
+      color: white;
+      font-size: var(--fontSize);     
+}
+	</style>
+</head>
+<div class="circle">
+  <h1 class="h1"> HOWDY!
+  </h1>
+  </div>
+ 
+</body>
+</html>
+
+<script>
+	window.addEventListener("mousemove", function(event){
+  console.log(event.clientY); //select x position of mouse
+  document.getElementsByClassName("circle")[0].style.top = (event.clientY - 40) + "px"; //select item in array
+  document.getElementsByClassName("circle")[0].style.left = (event.clientX - 40) + "px"; //select item in array
+});
+</script>
+
